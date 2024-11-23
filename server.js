@@ -1,5 +1,5 @@
 import express from "express";
-import colors from "colors";
+
 import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
@@ -17,8 +17,12 @@ connectDB();
 //rest object
 const app = express();
 
-//middelwares
-app.use(cors());
+
+// Middlewares
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  credentials: true
+}));
 app.use(express.json());
 app.use(morgan("dev"));
 

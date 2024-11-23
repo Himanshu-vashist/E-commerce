@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import { useParams, useNavigate } from "react-router-dom";
 import "./CategoryProductSyles.css";
-import axios from "axios";
+import axios from "../config/axios";
 
 const CategoryProduct = () => {
   const params = useParams();
